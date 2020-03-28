@@ -6,8 +6,28 @@
   <select [(ngModel)]="currentName" (change)="count()">
     <option *ngFor="let item of names;let i = index">{{item}}</option>
   </select>
-  <!-- <input type="text" > -->
+  <input type="text" [(ngModel)]="currentName" (keydown)="showText($event)">
+  <br/>
+  <button type="button" (click)="showText($event)">Button</button>
   <h1>
-    {{currentName}}
+    {{currentName | uppercase}}
+    {{currentName | lowercase}}
+    {{currentName | titlecase}}
+    {{currentName | slice:1:3}}
   </h1>
 </div>
+<div> 
+  <input type="text" #textValue name="text">
+  <br/>
+  <button type="button" (click)="showTextClick(textValue.value)">Button</button>
+</div>
+
+<div class="switches" >
+  <ul [ngSwitch]="value">
+    <li *ngSwitchCase="'indore'">Indore</li>
+    <li *ngSwitchCase="'Mumbai'">Mumbai</li>
+    <li *ngSwitchCase="'Pune'">Pune</li>
+    <li *ngSwitchDefault>Other</li>
+  </ul>
+</div>
+
