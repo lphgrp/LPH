@@ -1,0 +1,135 @@
+cat - 
+The cat command (short for “concatenate”) lists the contents of files to the terminal window. This is faster than opening the file in an editor, and there’s no chance you can accidentally alter the file. To read the contents of your test file, type the following command while the home directory is your current working directory, as it is by default:
+
+cat test
+
+cd -
+The cd command changes your current directory
+
+If you are changing to a directory that is within your current directory, you can simply type cd and the name of the other directory.
+cd test
+
+If you are changing to a directory elsewhere within the filesystem directory tree, provide the path to the directory with a leading /.
+cd /home/test
+
+go to your home directory, use the ~ (tilde) character as the directory name
+cd ~
+
+chmod -
+The chmod command sets the file permissions flags on a file or folder. The flags define who can read, write to or execute the file. When you list files with the -l (long format) option you’ll see a string of characters that look like
+
+One way to use chmod is to provide the permissions you wish to give to the owner, group, and others as a 3 digit number.  The leftmost digit represents the owner. The middle digit represents the group. The rightmost digit represents the others. The digits you can use and what they represent are listed here:
+
+0: No permission
+1: Execute permission
+2: Write permission
+3: Write and execute permissions
+4: Read permission
+5: Read and execute permissions
+6: Read and write permissions
+7: Read, write and execute permissions
+
+To set the permission to be read, write, and execute (7 from our list) for the owner; read and write (6 from our list) for the group; and read and execute (5 from our list) for the others we’d need to use the digits 765 with the chmod command:
+chmod 765 test
+
+df-
+The df command shows the size, used space, and available space on the mounted filesystems of your computer.
+
+Two of the most useful options are the -h (human readable) and -x (exclude) options. The human-readable option displays the sizes in Mb or Gb instead of in bytes.
+df -h directory name
+
+diff-
+The diff command compares two text files and shows the differences between them.
+diff test test1
+
+find-
+Use the find command to track down files that you know exist if you can’t remember where you put them
+find . -name *test*
+
+find . -type f -name *test*
+
+finger-
+The finger command gives you a short dump of information about a user, including the time of the user’s last login, the user’s home directory, and the user account’s full name.
+finger osboxes
+
+grep -
+The grep utility searches for lines which contain a search pattern.
+grep am test
+
+gzip -
+The gzip command compresses files. By default, it removes the original file and leaves you with the compressed version. To retain both the original and the compressed version, use the -k (keep) option.
+gzip test
+
+head-
+The head command gives you a listing of the first 10 lines of a file. If you want to see fewer or more lines, use the -n (number) option.
+head test
+head -n test
+
+history-
+The history command lists the commands you have previously issued on the command line
+history
+
+kill-
+The kill command allows you to terminate a process from the command line. You do this by providing the process ID (PID) of the process to kill.
+
+kill pid
+
+less-
+The less command allows you to view files without opening an editor. It’s faster to use, and there’s no chance of you inadvertently modifying the file. With less you can scroll forward and backward through the file using the Up and Down Arrow keys, the PgUp and PgDn keys and the Home and End keys
+
+less test
+
+ls-
+It lists the files and folders in the directory you specify. By default, ls looks in the current directory.
+
+ls -lrt - shows file in reversal order of time
+
+man-
+The man pages are the user manual for that command.
+
+man wc
+
+mkdir-
+The mkdir command allows you to create new directories in the filesystem. You must provide the name of the new directory to mkdir. If the new directory is not going to be within the current directory, you must provide the path to the new directory.
+
+mkdir test
+
+mv-
+The mv command allows you to move files and directories from directory to directory. It also allows you to rename files.
+
+mv source destination
+mv test test1
+
+ps-
+The ps command lists running processes. Using ps without any options causes it to list the processes running in the current shell.
+ps
+
+To see every process that is running, use the -e (every process) option:
+ps -editor
+
+pwd-
+The pwd command prints the working directory (the current directory) from the root / directory.
+
+sudo-
+The sudo command is required when performing actions that require root or superuser permissions, such as changing the password for another user.
+sudo passwd osboxes
+
+tail-
+The tail command gives you a listing of the last 10 lines of a file. If you want to see fewer or more lines, use the -n (number) option.
+tail test
+tail -n test
+
+uname-
+some system information regarding the Linux computer you’re working on with the uname command.
+uname -a
+
+w-
+The w command lists the currently logged in users.
+
+whoami-
+Use whoami to find out who you are logged in as or who is logged into an unmanned Linux terminal.
+
+
+
+
+
